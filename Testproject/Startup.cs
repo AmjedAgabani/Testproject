@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Testproject.Repositories;
 using Testproject.Services;
 
 namespace Testproject
@@ -24,6 +25,7 @@ namespace Testproject
         {
             services.AddMvc();
             services.AddSingleton<AccountsService>();
+            services.AddSingleton<AccountRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
