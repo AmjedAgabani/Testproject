@@ -13,9 +13,9 @@ namespace Testproject.Services
 
         public bool Login(string email, string password)
         {
-            var account = _repository.GetAccount(email);
+            var exists = _repository.Exists(email, password);
 
-            if (account.Password == password) return true;
+            if (exists) return true;
 
             return false;
         }
